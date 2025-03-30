@@ -1,4 +1,4 @@
-package quiz;
+package quiz; 
 
 import java.util.Random;
 import java.util.Scanner;

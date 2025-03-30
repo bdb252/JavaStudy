@@ -64,7 +64,7 @@ public class QuArrayList {
 				flag = true;
 				break;
 			}
-		}
+		} 
 		//3.검색결과 유/무에 따라 
 		//검색결과 있을때…검색된 데이터 삭제
 		//검색결과 없을때...검색결과가 없다고 출력
