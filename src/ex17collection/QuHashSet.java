@@ -24,44 +24,33 @@ class Avengers {
 		this.heroName = heroName;
 		this.weapon = weapon;
 	}
-
-//	@Override
-//	public boolean equals(Object obj) {
+	@Override
+	public int hashCode() {
+		//방법1 : 멤버변수의 hash값을 얻어온 후 적당히 연산한다.
+		int retCode1 = this.name.hashCode() 
+				+ this.heroName.hashCode()
+				+ this.weapon.hashCode();		
+		//방법2 : Objects 클래스의 hash()메서드를 사용한다.
+		int retCode2 = Objects.hash(this.name, this.heroName,
+				this.weapon);
+		System.out.println("hashCode호출됨");
+		return retCode2;
+	}
+	@Override
+	public boolean equals(Object obj) {
+//		System.out.println("equals호출됨");
 //		if(obj instanceof String) {
 //			if(this.name == (String)obj)
 //				return true;
 //		}
-//		Avengers avengers = (Avengers)obj;
-//		if(avengers.heroName == this.heroName && avengers.name == this.name && avengers.weapon == this.weapon) {
-//			return true;
-//		}
-//		else {
-//			return false;
-//		}
-//	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(heroName, name, weapon);
-	}
-
-
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
+		Avengers avengers = (Avengers)obj;
+		if(avengers.heroName == this.heroName && avengers.name == this.name && avengers.weapon == this.weapon) {
 			return true;
-		if (obj == null)
+		}
+		else {
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Avengers other = (Avengers) obj;
-		return Objects.equals(heroName, other.heroName) && Objects.equals(name, other.name)
-				&& Objects.equals(weapon, other.weapon);
+		}
 	}
-
-
-
 	@Override
 	public String toString() {
 		return "Avengers [본명=" + name + ", 닉네임=" + heroName + ", "
