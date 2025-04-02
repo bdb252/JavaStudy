@@ -154,5 +154,6 @@ public class FriendInfoHandler{
 //			e.printStackTrace();
 //		}
 		System.out.println("친구의 정보가 복원되었습니다.");
+		
 	}
 }
