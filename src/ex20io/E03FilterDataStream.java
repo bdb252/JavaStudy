@@ -52,7 +52,7 @@ public class E03FilterDataStream {
 			if(filterOut!=null) filterOut.close();
 			if(filterIn!=null) filterIn.close();
 		} 
-			catch (FileNotFoundException e) {
+		catch (FileNotFoundException e) {
 			System.out.println("해당파일없음");
 		}
 		catch (IOException e) {
