@@ -19,7 +19,7 @@ public class SQLdelete extends MyConnection{
 			///////////////////////////////////////////////////////
 			query = "delete from member where id=?";
 			psmt = con.prepareStatement(query);
-			psmt.setString(1, inputValue("삭제할 이름"));
+			psmt.setString(1, inputValue("삭제할 아이디"));
 			System.out.println(psmt.executeUpdate()+"행 삭제됨");
 		}
 		catch (SQLException e) {
